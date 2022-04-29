@@ -1,0 +1,20 @@
+{
+  "name": "Heroku-autocheckin",
+  "description": "autocheckin",
+  "keywords": ["autocheckin"],
+  "website": "https://github.com/amber6hua/autocheckin",
+  "repository": "https://github.com/amber6hua/autocheckin",
+  "env": {
+    "API_ID": {
+      "description": "API ID of Telegram."
+    },
+    "API_HASH": {
+      "description": "API HASH of Telegram."
+    }
+  },
+  "buildpacks": [
+    {
+      "url": "heroku/python"
+    }
+  ]
+}

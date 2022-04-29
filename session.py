@@ -1,7 +1,5 @@
 from settings import API_HASH, API_ID
 from telethon import TelegramClient
-import socks
-
 
 class SessionConfig:
 

@@ -1,7 +1,6 @@
 APScheduler==3.0.0
 environs~=9.3.4
 telethon
-socks
 asyncio
 quart
 quart_cors

@@ -1,7 +1,6 @@
 import os
 import time
 from telethon import TelegramClient, events, sync
-import socks
 import asyncio
 from settings import API_HASH, API_ID
 
@@ -21,10 +20,7 @@ def checkin():
     for num in range(len(api_id)):
         session_name[num] = "id_" + str(session_name[num])
 
-        host = "127.0.0.1"
-        port = 10808
-        proxy = (socks.SOCKS5, host, port)
-        client = TelegramClient(session_name[num], api_id[num], api_hash[num], proxy=proxy)
+        client = TelegramClient(session_name[num], api_id[num], api_hash[num])
         client.connect()
         #client.start()
         for (k, v) in robot_map.items():

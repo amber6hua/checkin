@@ -5,7 +5,6 @@ import hypercorn
 from hypercorn.asyncio import serve
 import asyncio
 import json
-import socks
 from settings import API_HASH, API_ID
 from session import SessionConfig
 

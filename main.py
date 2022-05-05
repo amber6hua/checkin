@@ -40,7 +40,7 @@ async def cleanup():
 
 @app.route('/', methods=["GET"])
 async def hello():
-    return "Hello World"
+    return "Hello World Amber"
 
 
 @app.route('/requestCode', methods=["POST"])

@@ -101,5 +101,4 @@ async def logout():
 
 
 config = hypercorn.Config()
-config.bind = ["0.0.0.0:" + PORT]
 loop.run_until_complete(serve(app, config))

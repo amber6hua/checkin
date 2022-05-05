@@ -6,6 +6,9 @@ APPROOT = os.path.dirname(os.path.dirname(__file__))
 API_ID = os.environ.get("API_ID")
 API_HASH = os.environ.get("API_HASH")
 PORT = os.environ.get("PORT")
+print(API_ID)
+print(API_HASH)
+print(PORT)
 
 CORS_ORIGINS = [
   'http://localhost:8080',

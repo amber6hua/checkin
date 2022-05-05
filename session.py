@@ -16,5 +16,5 @@ class SessionConfig:
     def client(self) -> TelegramClient:
         if not self._session:
             raise SystemExit('not authorized!')
-        print(API_ID)
+
         return TelegramClient(self._session, API_ID, API_HASH)

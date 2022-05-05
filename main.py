@@ -19,7 +19,6 @@ client = session.client
 
 # Quart App
 app = Quart(__name__)
-app.secret_key = 'CHANGE THIS TO SOMETHING SECRET'
 
 loop = asyncio.get_event_loop()
 
@@ -99,7 +98,7 @@ async def logout():
 
     return "Logout Success", 200
 
-
-config = hypercorn.Config()
-config.bind = ["0.0.0.0:" + PORT]
-loop.run_until_complete(serve(app, config))
+if __name__ == "__main__":
+    config = hypercorn.Config()
+    config.bind = ["0.0.0.0:" + PORT]
+    loop.run_until_complete(serve(app, config))

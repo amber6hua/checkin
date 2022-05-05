@@ -1,1 +1,1 @@
-web: hypercorn --bind '0.0.0.0:$PORT' quartTest:app
+web: python app.py

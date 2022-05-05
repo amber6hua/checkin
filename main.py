@@ -103,4 +103,6 @@ async def logout():
     return "Logout Success", 200
 
 
-loop.run_until_complete(serve(app))
+config = hypercorn.Config()
+config.bind = ["0.0.0.0:8080"]
+loop.run_until_complete(serve(app, config))

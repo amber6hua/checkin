@@ -5,6 +5,7 @@ APPROOT = os.path.dirname(os.path.dirname(__file__))
 # Telegram credentials
 API_ID = os.environ.get("API_ID")
 API_HASH = os.environ.get("API_HASH")
+PORT = os.environ.get("PORT")
 
 CORS_ORIGINS = [
   'http://localhost:8080',

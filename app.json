@@ -10,6 +10,9 @@
     },
     "API_HASH": {
       "description": "API HASH of Telegram."
+    },
+    "PORT": {
+      "description": "PORT."
     }
   },
   "buildpacks": [

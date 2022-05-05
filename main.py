@@ -5,7 +5,7 @@ import hypercorn
 from hypercorn.asyncio import serve
 import asyncio
 import json
-from settings import API_HASH, API_ID
+from settings import API_HASH, API_ID, PORT
 from session import SessionConfig
 
 session = SessionConfig('id_' + API_ID + '.session')
@@ -104,5 +104,5 @@ async def logout():
 
 
 config = hypercorn.Config()
-config.bind = ["0.0.0.0:8080"]
+config.bind = ["0.0.0.0:" + PORT]
 loop.run_until_complete(serve(app, config))

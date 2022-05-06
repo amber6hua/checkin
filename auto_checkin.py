@@ -2,14 +2,15 @@ import os
 import time
 from telethon import TelegramClient, events, sync
 import asyncio
-from settings import API_HASH, API_ID
+from settings import API_HASH, API_ID, DATABASE_URL
+from alchemysession import AlchemySessionContainer
+container = AlchemySessionContainer(DATABASE_URL, None, '', None, False)
 
 
 # 第一次登录时需要输入手机号和登录验证码，会在此文件同目录下生成
 # bot_name.session，后续依靠这个文件不再需要重新登录
 
 def checkin():
-
     new_loop = asyncio.new_event_loop()
     asyncio.set_event_loop(new_loop)
 
@@ -18,11 +19,13 @@ def checkin():
     robot_map = {'@yyjc_checkin_bot': '/checkin'}
     session_name = api_id[:]
     for num in range(len(api_id)):
-        session_name[num] = "id_" + str(session_name[num])
+        session_name[num] = "id_" + str(session_name[num] + '.session')
 
-        client = TelegramClient(session_name[num], api_id[num], api_hash[num])
+        session = container.new_session(session_name[num])
+        client = TelegramClient(session, api_id[num], api_hash[num])
+        # client = TelegramClient(session_name[num], api_id[num], api_hash[num])
         client.connect()
-        #client.start()
+        # client.start()
         for (k, v) in robot_map.items():
             print("Start checkin: ", k)
             client.send_message(k, v)  # 设置机器人和签到命令

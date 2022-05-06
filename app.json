@@ -10,6 +10,10 @@
     },
     "API_HASH": {
       "description": "API HASH of Telegram."
+    },
+    "DATABASE_URL": {
+      "description": "postgresql DATABASE_URL.",
+      "required": false
     }
   },
   "buildpacks": [

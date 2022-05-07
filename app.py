@@ -38,19 +38,20 @@ async def cleanup():
     await client.disconnect()
 
 
-@app.route('/', methods=["GET"])
+@app.route('/', methods=["GET"], allow_origin=["http://localhost:3000"])
 async def hello():
     return "Hello World"
 
 
 @app.route('/requestCode', methods=["POST"])
 @route_cors(allow_headers=["content-type"],
-            allow_methods=["POST"],
+            allow_methods=["POST"], allow_origin=["http://localhost:3000"]
             )
 async def sendCode():
     data = await request.get_json()
     global phone
     phone = data["phone"]
+    print(phone)
     if 'phone' in data:
         try:
             await client.send_code_request(phone)
@@ -61,7 +62,7 @@ async def sendCode():
 
 @app.route('/signin', methods=["POST"])
 @route_cors(allow_headers=["content-type"],
-            allow_methods=["POST"])
+            allow_methods=["POST"], allow_origin=["http://localhost:3000"])
 async def signInAttempt():
     data = await request.get_json()
     code = data["code"]
@@ -90,7 +91,7 @@ async def signInAttempt():
 
 @app.route('/logout', methods=["POST"])
 @route_cors(allow_headers=["content-type"],
-            allow_methods=["POST"])
+            allow_methods=["POST"], allow_origin=["http://localhost:3000"])
 async def logout():
     try:
         await client.log_out()

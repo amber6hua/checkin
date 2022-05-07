@@ -8,7 +8,7 @@ import asyncio
 sched = BlockingScheduler(timezone=str(tzlocal.get_localzone()))
 
 
-@sched.scheduled_job('interval', seconds=54000)
+@sched.scheduled_job('interval', hours=15)
 def timed_job():
     print('This job is run.')
     checkin()

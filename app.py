@@ -38,7 +38,9 @@ async def cleanup():
     await client.disconnect()
 
 
-@app.route('/', methods=["GET"], allow_origin=["http://localhost:3000"])
+@app.route('/', methods=["GET"])
+@route_cors(
+    allow_origin=["http://localhost:3000"])
 async def hello():
     return "Hello World"
 

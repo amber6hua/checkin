@@ -11,6 +11,9 @@ container = AlchemySessionContainer(DATABASE_URL)
 # bot_name.session，后续依靠这个文件不再需要重新登录
 
 def auth():
+    new_loop = asyncio.new_event_loop()
+    asyncio.set_event_loop(new_loop)
+
     session_name = "id_" + API_ID + '.session'
     session = container.new_session(session_name)
     client = TelegramClient(session, API_ID, API_HASH)

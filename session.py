@@ -1,7 +1,7 @@
-from settings import API_HASH, API_ID, DATABASE_URL, MANGE_TABLES
+from settings import API_HASH, API_ID, DATABASE_URL
 from telethon import TelegramClient
 from alchemysession import AlchemySessionContainer
-container = AlchemySessionContainer(DATABASE_URL, manage_tables=MANGE_TABLES)
+container = AlchemySessionContainer(DATABASE_URL, manage_tables=False)
 
 class SessionConfig:
 

@@ -57,7 +57,8 @@ async def sendCode():
     if 'phone' in data:
         try:
             await client.send_code_request(phone)
-        except:
+        except(ValueError, ArithmeticError):
+            print(ValueError)
             return "Phone Number incorrect", 400
         return "Code Sent", 201
 

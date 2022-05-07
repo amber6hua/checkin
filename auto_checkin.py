@@ -4,7 +4,7 @@ from telethon import TelegramClient, events, sync
 import asyncio
 from settings import API_HASH, API_ID, DATABASE_URL
 from alchemysession import AlchemySessionContainer
-container = AlchemySessionContainer(DATABASE_URL, None, '', None, False)
+container = AlchemySessionContainer(DATABASE_URL, manage_tables=False)
 
 
 # 第一次登录时需要输入手机号和登录验证码，会在此文件同目录下生成

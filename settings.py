@@ -7,6 +7,7 @@ API_ID = os.environ.get("API_ID")
 API_HASH = os.environ.get("API_HASH")
 PORT = os.environ.get("PORT")
 DATABASE_URL = os.environ.get("DATABASE_URL")
+DATABASE_URL = DATABASE_URL.replace('postgres', 'postgresql')
 
 CORS_ORIGINS = [
   'http://localhost:8080',

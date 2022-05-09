@@ -4,6 +4,10 @@
 
 You can deploy without cloning this repo to test it out.
 
+## 准备
+- 到https://my.telegram.org/用手机号登录这个网址申请api
+- 申请成功后保存好api_id和api_hash
+
 ## 开发过程
 - telegram 每日向机器人发送签到很麻烦
 - 在github 上看到关于python的telethon登录并发送消息

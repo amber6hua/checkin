@@ -11,3 +11,4 @@ You can deploy without cloning this repo to test it out.
 > 最后启动 clock python clock.py 定时执行
 
 ## GG
+~~web: hypercorn app:app~~

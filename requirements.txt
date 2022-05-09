@@ -5,7 +5,5 @@ asyncio
 quart
 quart_cors
 hypercorn
-gunicorn
-flask
 telethon-session-sqlalchemy-fork
 psycopg2

@@ -9,12 +9,5 @@ PORT = os.environ.get("PORT")
 DATABASE_URL = os.environ.get("DATABASE_URL")
 DATABASE_URL = DATABASE_URL.replace('postgres', 'postgresql')
 
-CORS_ORIGINS = [
-  'http://localhost:8080',
-  'http://127.0.0.1:8080',
-  'http://metta-proxy',
-  'http://metta-front'
-]
-
 if not API_HASH or not API_ID:
     raise SystemExit('API_ID/API_HASH pair not set, check .env file')

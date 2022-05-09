@@ -24,6 +24,9 @@
   "addons": [
     {
       "plan": "heroku-postgresql:hobby-dev"
+    },
+    {
+      "plan": "process-scheduler:pet-project"
     }
   ]
 }

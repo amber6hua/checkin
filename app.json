@@ -24,9 +24,6 @@
   "addons": [
     {
       "plan": "heroku-postgresql:hobby-dev"
-    },
-    {
-      "plan": "advanced-scheduler:trial-0"
     }
   ]
 }

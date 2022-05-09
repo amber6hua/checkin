@@ -11,12 +11,6 @@ from session import SessionConfig
 session = SessionConfig('id_' + API_ID + '.session')
 client = session.client
 
-# Telethon Client And Proxy
-# host = "127.0.0.1"
-# port = 10808
-# proxy = (socks.SOCKS5, host, port)
-# client = TelegramClient('id_' + API_ID, API_ID, API_HASH, proxy=proxy)
-
 # Quart App
 app = Quart(__name__)
 app.secret_key = 'CHANGE THIS TO SOMETHING SECRET'

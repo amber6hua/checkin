@@ -26,7 +26,7 @@
       "plan": "heroku-postgresql:hobby-dev"
     },
     {
-      "plan": "process-scheduler:pet-project"
+      "plan": "advanced-scheduler:trial-0"
     }
   ]
 }

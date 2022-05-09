@@ -10,8 +10,12 @@ sched = BlockingScheduler(timezone=str(tzlocal.get_localzone()))
 
 @sched.scheduled_job('interval', hours=15)
 def timed_job():
-    print('This job is run.')
+    print('This job is run2.')
     checkin()
+
+@sched.scheduled_job('interval', minutes=28)
+def timed_job():
+    print('This job is run1.')
 
 
 sched.start()

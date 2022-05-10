@@ -8,6 +8,15 @@ You can deploy without cloning this repo to test it out.
 - 到https://my.telegram.org/用手机号登录这个网址申请api
 - 申请成功后保存好api_id和api_hash
 
+## 使用说明
+- fork后根据需要可自行修改
+- [auto_checkin.py] 的 robot_map = {key:value} key = 签到的机器人 value = 命令，按个人需要设置
+- [clock.py] 是定时任务，控制多长时间签到
+- 部署成功，进入应用管理，点击右上角[more] 选择 Run Console, 输入bash，进入命令行界面， 
+- 执行 python auth.py 输入带区号的手机号，获得验证码，登录telethon
+- 进入Resources 分页启动 worker python auto_checkin.py 试试能否正常签到
+- 最后启动 clock python clock.py 定时执行
+
 ## 开发过程
 - telegram 每日向机器人发送签到很麻烦
 - 在github 上看到关于python的telethon登录并发送消息
@@ -20,12 +29,6 @@ You can deploy without cloning this repo to test it out.
 - 最后通过执行auth.py在本地登录，把登录信息储存在heroku的postgresql
 - 然后运行定时器 clock
 
-## 说明
-- 本来想利用quart框架web api 方式 登录telethon (不知道为什么heroku上无法发送获得验证码)
-- 后来改用 heroku 的 run console, 进入bash 执行 auth.py 登录telethon
-- 然后 进入Resources 分页启动 worker python auto_checkin.py 试试能否正常签到
-- 最后启动 clock python clock.py 定时执行
-
 ## GG
 Procfile文件
 ~~web: hypercorn app:app~~
@@ -34,3 +37,8 @@ Procfile文件
 - telethon-session-sqlalchemy-fork 原作者的telethon-session-sqlalchemy有点问题，发现有个fork版的竟然可以用
 - AlchemySessionContainer不太了解，第一次启动没问题 container = AlchemySessionContainer(DATABASE_URL)
 - 第二次启动会报key重复，我这么修改的 container = AlchemySessionContainer(DATABASE_URL, manage_tables=False)
+
+## heroku运行机制
+- web进程消耗免费时长，普通用户550小时，绑卡能多450小时(所有应用共用)
+- clock 看起来不消耗时长
+- heroku 应用会自动重启，容易打乱定时任务节奏

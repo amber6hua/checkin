@@ -1,4 +1,4 @@
-# checkin
+# heroku telethon auto checkin
 
 [![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/amber6hua/checkin.git)
 
@@ -28,6 +28,7 @@ You can deploy without cloning this repo to test it out.
 - 终于部署在heroku，结果发现无法发送验证码，也没有报错
 - 最后通过执行auth.py在本地登录，把登录信息储存在heroku的postgresql
 - 然后运行定时器 clock
+- 注：我的签到周期是15小时，但是由于自动重启原因，容易打乱定时任务节奏，所以我缩短了执行频率，就算重启也不会有太大影响
 
 ## GG
 Procfile文件

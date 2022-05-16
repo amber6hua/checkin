@@ -40,6 +40,5 @@ Procfile文件
 - 第二次启动会报key重复，我这么修改的 container = AlchemySessionContainer(DATABASE_URL, manage_tables=False)
 
 ## heroku运行机制
-- web进程消耗免费时长，普通用户550小时，绑卡能多450小时(所有应用共用)
-- clock 看起来不消耗时长
+- heroku运行消耗免费时长，普通用户550小时，绑卡能多450小时(所有应用共用)
 - heroku 应用会自动重启，容易打乱定时任务节奏

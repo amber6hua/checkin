@@ -13,9 +13,13 @@ def timed_job():
     print('This job is run2.')
     checkin()
 
-@sched.scheduled_job('interval', minutes=28)
+# @sched.scheduled_job('interval', minutes=28)
+# def timed_job():
+#     print('This job is run1.')
+
+@sched.scheduled_job('interval', days=1)
 def timed_job():
-    print('This job is run1.')
+    print('This job is run3.')
 
 
 sched.start()
